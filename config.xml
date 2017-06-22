@@ -141,6 +141,10 @@
     <gap:config-file platform="android" parent="/manifest">
          <application android:debuggable="true" />
     </gap:config-file>
+        
+    <gap:plugin name="phonegap-plugin-push" source="npm" >
+        <param name="SENDER_ID" value="694767596569" />
+    </gap:plugin>
 
     <!-- See MOBILE-892 -->
     <preference name="permissions" value="none"/>
