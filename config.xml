@@ -3,16 +3,16 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:android = "http://schemas.android.com/apk/res/android"
         id        = "com.moodle.moodlemobile"
-        versionCode = "20180"
+        versionCode = "20182"
         version   = "3.3.0">
-    <name>Moodle Mobile</name>
+    <name>Wodonga TAFE Moodle</name>
 
     <description>
-        Moodle Mobile official app
+        Wodonga TAFE Moodle Mobile app
     </description>
 
-    <author href="http://moodle.com" email="mobile@moodle.com">
-        Moodle Pty Ltd
+    <author href="http://online.tafevc.com.au/wodonga" email="learninginnovation@wodongatafe.edu.au">
+        Wodonga TAFE
     </author>
 
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
@@ -141,7 +141,7 @@
     <gap:plugin name="ch.ti8m.documenthandler" spec="https://github.com/ti8m/DocumentHandler.git" source="git" />
 
     <gap:config-file platform="android" parent="/manifest">
-         <application android:debuggable="true" />
+         <application android:debuggable="false" />
     </gap:config-file>
 
     <!-- See MOBILE-892 -->
