@@ -11243,23 +11243,13 @@ angular.module('mm.core.login', [])
         controller: 'mmLoginInitCtrl',
         cache: false 
     })
-    .state('mm_login.sites', {
-        url: '/sites',
-        templateUrl: 'core/components/login/templates/sites.html',
-        controller: 'mmLoginSitesCtrl',
-        onEnter: ["$mmLoginHelper", "$mmSitesManager", function($mmLoginHelper, $mmSitesManager) {
-            $mmSitesManager.hasNoSites().then(function() {
-                $mmLoginHelper.goToAddSite();
-            });
-        }]
-    })
-.state('mm_login.site', {?
-? ? url: '/site',?
-? ? templateUrl: 'core/components/login/templates/site.html',
-? ? controller: 'mmLoginSiteCtrl',
-? ??onEnter: function($state) {
-? ? ? ? $state.go('mm_login.credentials', {siteurl: 'https://online.tafevc.com.au/wodonga'})
-}
+.state('mm_login.site', { 
+    url: '/site', 
+    templateUrl: 'core/components/login/templates/site.html',
+    controller: 'mmLoginSiteCtrl',
+    onEnter: function($state) {
+        $state.go('mm_login.credentials', {siteurl: 'https://moodle23.wodongatafe.edu.au'});
+    }
 })
     .state('mm_login.credentials', {
         url: '/cred',
