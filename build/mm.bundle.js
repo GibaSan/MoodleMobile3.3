@@ -6028,7 +6028,7 @@ angular.module('mm.core')
         text = text.replace(/<\/?(?!\!)[^>]*>/gi, '');
         text = self.decodeHTMLEntities(text);
         text = text.replace(/_/gi, " ");
-        text = text.replace(/[\'"’-]/gi, "");
+        text = text.replace(/[\'"?-]/gi, "");
         text = text.replace(/([0-9])[.,]([0-9])/gi, '$1$2');
         return text.split(/\w\b/gi).length - 1;
     };
@@ -11253,12 +11253,12 @@ angular.module('mm.core.login', [])
             });
         }]
     })
-.state('mm_login.site', { 
-    url: '/site', 
-    templateUrl: 'core/components/login/templates/site.html',
-    controller: 'mmLoginSiteCtrl',
-    onEnter: function($state) {
-        $state.go('mm_login.credentials', {siteurl: 'https://online.tafevc.com.au/wodonga'})
+.state('mm_login.site', {?
+? ? url: '/site',?
+? ? templateUrl: 'core/components/login/templates/site.html',
+? ? controller: 'mmLoginSiteCtrl',
+? ??onEnter: function($state) {
+? ? ? ? $state.go('mm_login.credentials', {siteurl: 'https://online.tafevc.com.au/wodonga'})
 }
 })
     .state('mm_login.credentials', {
@@ -32441,7 +32441,7 @@ angular.module('mm.addons.qtype_numerical')
         }
         var regexString = '[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)(?:e[-+]?\\d+)?';
         answer = answer.replace(' ', '');
-        answer = answer.replace(/(?:e|E|(?:x|\*|×)10(?:\^|\*\*))([+-]?\d+)/, 'e$1');
+        answer = answer.replace(/(?:e|E|(?:x|\*|?)10(?:\^|\*\*))([+-]?\d+)/, 'e$1');
         if (answer.indexOf('.') != -1 || answer.split(',').length - 1 > 1) {
             answer = answer.replace(',', '');
         } else {
@@ -59912,13 +59912,12 @@ angular.module('mm.core')
     "versionname" : "3.3.0",
     "cache_expiration_time" : 300000,
     "default_lang" : "en",
-    "languages": {"ar": "????", "bg": "?????????", "ca": "Català", "cs": "Ceština", "da": "Dansk", "de": "Deutsch", "el": "????????", "en": "English", "es": "Español", "es-mx": "Español - México", "eu": "Euskara", "fa": "?????", "fr" : "Français", "he" : "?????", "hu": "magyar", "it": "Italiano", "ja": "???","nl": "Nederlands", "pl": "Polski", "pt-br": "Português - Brasil", "pt": "Português - Portugal", "ro": "Româna", "ru": "???????", "sv": "Svenska", "tr" : "Türkçe", "uk" : "??????????", "zh-cn" : "????", "zh-tw" : "????"},
+    "languages": {"ar": "????", "bg": "?????????", "ca": "Catal?", "cs": "Ce?tina", "da": "Dansk", "de": "Deutsch", "el": "????????", "en": "English", "es": "Espa?ol", "es-mx": "Espa?ol - M?xico", "eu": "Euskara", "fa": "?????", "fr" : "Fran?ais", "he" : "?????", "hu": "magyar", "it": "Italiano", "ja": "???","nl": "Nederlands", "pl": "Polski", "pt-br": "Portugu?s - Brasil", "pt": "Portugu?s - Portugal", "ro": "Rom?na", "ru": "???????", "sv": "Svenska", "tr" : "T?rk?e", "uk" : "??????????", "zh-cn" : "????", "zh-tw" : "????"},
     "wsservice" : "moodle_mobile_app",
     "wsextservice" : "local_mobile",
-    "demo_sites": {"student": {"url": "http://school.demo.moodle.net", "username": "student", "password": "moodle"}, "teacher": {"url": "http://school.demo.moodle.net", "username": "teacher", "password": "moodle"}, "cva": {"url": "http://mm.cvaconsulting.com/moodle", "username": "student", "password": "student"}},
     "gcmpn": "694767596569",
     "customurlscheme": "moodlemobile",
-    "siteurl": "",
+    "siteurl": "https://moodle23.wodongatafe.edu.au/",
     "skipssoconfirmation": "false",
     "forcedefaultlanguage": "false",
     "privacypolicy": "https://moodle.org/mod/page/view.php?id=8148"
